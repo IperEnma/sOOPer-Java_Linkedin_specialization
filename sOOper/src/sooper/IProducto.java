@@ -12,5 +12,5 @@ public interface IProducto {
 	
 	boolean esCompatible(IProducto producto);
 	
-	boolean puedeEntrar(IContenedor contenedor);
+	boolean puedeEntrar(IContenedor contenedor  );
 }

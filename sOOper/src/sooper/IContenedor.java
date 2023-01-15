@@ -8,6 +8,8 @@ public interface IContenedor {
 	
 	int getVolumen();
 	
+	int getSuperficie();
+	
 	int getResistencia();
 	
 	int volumenDisponible();
