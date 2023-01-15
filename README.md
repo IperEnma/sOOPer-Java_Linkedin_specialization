@@ -1,6 +1,8 @@
 
+# Representacion del modelo conceptual en UML
 ![Flujo](https://i.ibb.co/R6YGyjh/s-OOPer-Modelo-Conceptual.png)
-Requisitos del proyecto
+
+#Requisitos del proyecto
 sOOper
 Nos han encargado el desarrollo de una aplicación para gestionar el embolsado de los productos de los pedidos de supermercado online sOOper.
 
