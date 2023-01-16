@@ -68,7 +68,7 @@ public abstract class Contenedor implements IContenedor{
 				+ ", Volumen disponible: " + volumenDisponible() + "cm3" + ")"
 				+ "\n");
 		if (productos.isEmpty()) {
-			sb.append("\tNo tiene productos");
+			sb.append("\t No tiene productos");
 		}
 		for (IProducto producto : productos) {
 			sb.append("\t" + producto + "\n");
