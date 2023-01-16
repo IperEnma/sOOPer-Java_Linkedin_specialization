@@ -1,6 +1,7 @@
 package sooper.productos;
 
 import sooper.IProducto;
+import sooper.enums.Categoria;
 
 public class Mascotas extends Producto {
 
@@ -9,8 +10,8 @@ public class Mascotas extends Producto {
 	}
 
 	@Override
-	public String getCategoria() {
-		return "Mascotas";
+	public Categoria getCategoria() {
+		return Categoria.MASCOTAS;
 	}
 
 	@Override
