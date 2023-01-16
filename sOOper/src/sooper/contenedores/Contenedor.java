@@ -12,6 +12,11 @@ public abstract class Contenedor implements IContenedor{
 	private int resistencia;
 	private Set<IProducto> productos;
 
+	public Contenedor(String referencia, int alto) {
+		this.referencia = referencia;
+		this.alto = alto;
+	}
+
 	@Override
 	public String getReferencia() {
 		return referencia;
@@ -36,12 +41,6 @@ public abstract class Contenedor implements IContenedor{
 	@Override
 	public Set<IProducto> getProductos() {
 		return productos;
-	}
-
-	@Override
-	public String getTipo() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
