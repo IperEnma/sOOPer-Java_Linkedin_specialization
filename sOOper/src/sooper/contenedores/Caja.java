@@ -7,7 +7,7 @@ public class Caja extends Contenedor{
 	private int ancho;
 	private int largo;
 	
-	public Caja(int largo, int ancho, int alto, String referencia) {
+	public Caja(String referencia, int alto, int ancho, int largo) {
 		super(referencia, alto);
 		this.ancho = ancho;
 		this.largo = largo;

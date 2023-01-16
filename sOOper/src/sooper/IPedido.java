@@ -2,7 +2,7 @@ package sooper;
 
 import java.util.Set;
 
-public interface IPedidos {
+public interface IPedido {
 	
 	String getReferencia();
 	
