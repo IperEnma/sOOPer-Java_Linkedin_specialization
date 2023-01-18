@@ -6,8 +6,8 @@ public class Bolsa extends Contenedor{
 	
 	private int ancho;
 	
-	public Bolsa(String referencia, int alto, int ancho) {
-		super(referencia, alto);
+	public Bolsa(String referencia, int alto, int ancho, int resistencia) {
+		super(referencia, alto, resistencia);
 		this.ancho = ancho;
 	}
 

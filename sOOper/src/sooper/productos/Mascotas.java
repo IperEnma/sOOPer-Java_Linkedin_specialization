@@ -16,8 +16,7 @@ public class Mascotas extends Producto {
 
 	@Override
 	public boolean esCompatible(IProducto producto) {
-		// TODO Auto-generated method stub
-		return false;
+		return !Categoria.DROGUERIA.equals(producto.getCategoria());
 	}
 
 }

@@ -2,14 +2,14 @@ package sooper.productos;
 
 import sooper.IContenedor;
 import sooper.IProducto;
+import sooper.contenedores.Contenedor;
 
 public abstract class Producto implements IProducto {
 
 	private String referencia;
 	private int peso;
 	private int volumen;
-	
-	
+	private IContenedor contenedor;
 	
 	public Producto(String referencia, int peso, int volumen) {
 		this.referencia = referencia;
@@ -33,9 +33,20 @@ public abstract class Producto implements IProducto {
 	}
 
 	@Override
-	public boolean puedeEntrar(IContenedor contenedor) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean tengoEspacio(IContenedor contenedor) {
+		return contenedor.volumenDisponible() > volumen;
 	}
 
+	@Override
+	public void meter(Contenedor contenedor) {
+		this.contenedor = contenedor;
+	}
+	
+	@Override
+	public String toString() {
+		return "\tProduco [Categoria=" + getCategoria() +
+				", Referencia=" + referencia +
+				", Volumen=" + volumen +
+				", Contenedor=" + contenedor.getReferencia() + "]";
+	}
 }

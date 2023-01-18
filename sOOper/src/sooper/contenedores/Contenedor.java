@@ -13,9 +13,10 @@ public abstract class Contenedor implements IContenedor{
 	private int resistencia;
 	private Set<IProducto> productos;
 
-	public Contenedor(String referencia, int alto) {
+	public Contenedor(String referencia, int alto, int resistencia) {
 		this.referencia = referencia;
 		this.alto = alto;
+		this.resistencia = resistencia;
 		productos = new HashSet<IProducto>();
 	}
 
@@ -36,8 +37,15 @@ public abstract class Contenedor implements IContenedor{
 
 	@Override
 	public int volumenDisponible() {
-		// TODO Auto-generated method stub
-		return 0;
+		return getVolumen() - volumenOcupado();
+	}	
+
+	private int volumenOcupado() {
+		int volumenTotal = 0;
+		for (IProducto p : productos) {
+			volumenTotal += p.getVolumen();
+		}
+		return volumenTotal;
 	}
 
 	@Override
@@ -47,14 +55,26 @@ public abstract class Contenedor implements IContenedor{
 
 	@Override
 	public boolean meter(IProducto producto) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean resistenciaOk = resiste(producto);
+		boolean volumenOk = producto.tengoEspacio(this);
+		boolean compatibilidadOk = true;
+		
+		for (IProducto p : productos) {
+			boolean compatibleOk = producto.esCompatible(p);
+			compatibilidadOk &= compatibleOk;
+		}
+		
+		boolean acepta = resistenciaOk && volumenOk && compatibilidadOk;
+		if (acepta) {
+			productos.add(producto);
+			producto.meter(this);
+		}
+		return acepta;
 	}
 
 	@Override
 	public boolean resiste(IProducto producto) {
-		// TODO Auto-generated method stub
-		return false;
+		return resistencia > producto.getPeso();
 	}
 	
 	@Override

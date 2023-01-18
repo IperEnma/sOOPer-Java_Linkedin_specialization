@@ -1,5 +1,6 @@
 package sooper;
 
+import sooper.contenedores.Contenedor;
 import sooper.enums.Categoria;
 
 public interface IProducto {
@@ -14,5 +15,7 @@ public interface IProducto {
 	
 	boolean esCompatible(IProducto producto);
 	
-	boolean puedeEntrar(IContenedor contenedor  );
+	boolean tengoEspacio(IContenedor contenedor  );
+
+	void meter(Contenedor contenedor);
 }
